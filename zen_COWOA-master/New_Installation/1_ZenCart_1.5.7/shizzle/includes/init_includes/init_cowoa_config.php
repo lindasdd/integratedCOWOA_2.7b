@@ -23,7 +23,7 @@ if ($original_config->RecordCount()) {
     // if exists update the existing COWOA configuration group entry
     $sql = "UPDATE " . TABLE_CONFIGURATION_GROUP . " SET 
                 configuration_group_description = '" . $cowoa_menu_text . "' 
-                WHERE configuration_group_title = '" . cowoa_menu_title . "'";
+                WHERE configuration_group_title = '" . $cowoa_menu_title . "'";
     $db->Execute($sql);
     $sort = $original_config->fields['sort_order'];
 } else {
@@ -50,7 +50,7 @@ if ($original_config->RecordCount()) {
     // if exists updating the existing COWOA configuration title with the new (v2.6 COWOA and greater)
     $sql = "UPDATE " . TABLE_CONFIGURATION . " SET 
                 configuration_title = '" . $cowoa_config_title_new . "' 
-                WHERE configuration_title = '" . cowoa_config_title_old . "'";
+                WHERE configuration_title = '" . $cowoa_config_title_old . "'";
     $db->Execute($sql);
     $sort = $original_config->fields['sort_order'];
 }
@@ -63,7 +63,7 @@ if ($original_config->RecordCount()) {
     // if exists updating the existing COWOA configuration title with the new (v2.6 COWOA and greater)
     $sql = "UPDATE " . TABLE_CONFIGURATION . " SET 
                 configuration_description = '" . $cowoa_config_desc_new . "' 
-                WHERE configuration_description = '" . cowoa_config_desc_old . "'";
+                WHERE configuration_description = '" . $cowoa_config_desc_old . "'";
     $db->Execute($sql);
     $sort = $original_config->fields['sort_order'];
 }
@@ -78,7 +78,7 @@ $sql = "INSERT IGNORE INTO " . TABLE_CONFIGURATION . " (configuration_id, config
 $db->Execute($sql);
 
 // - UPDATE VERSION NUMBER
-$sql = "UPDATE " . TABLE_CONFIGURATION .  " SET configuration_value = 2.7 WHERE configuration_value = 2.6";
+$sql = "UPDATE " . TABLE_CONFIGURATION .  " SET configuration_value = 2.8 WHERE configuration_value = 2.7";
 $db->Execute($sql);
 
 $sql = "INSERT IGNORE INTO " . TABLE_CONFIGURATION . " (configuration_id, configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added, use_function, set_function) VALUES (NULL, 'Activate COWOA?', 'COWOA_STATUS', 'false', 'Activate COWOA module? <br />Set to True to allow a customer to checkout without an account.', '" . $cowoa_configuration_id . "', 10, NOW(), NULL, 'zen_cfg_select_option(array(\'true\', \'false\'),')";
@@ -131,4 +131,4 @@ if (file_exists(DIR_FS_ADMIN . DIR_WS_INCLUDES . 'auto_loaders/config.cowoa.php'
 }
 
 /* INSTALLATION SUCCESS MESSAGE */
-$messageStack->add('COWOA v2.7 install completed!', 'success');
+$messageStack->add('COWOA v2.8 install completed!', 'success');

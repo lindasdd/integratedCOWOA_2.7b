@@ -18,7 +18,7 @@ if (!zen_is_logged_in() || zen_in_guest_checkout()) {
   $messageStack->add_session('login', ERROR_GV_CREATE_ACCOUNT, 'error');
   zen_redirect(zen_href_link(FILENAME_LOGIN, (isset($_GET['gv_no']) ? 'gv_no=' . preg_replace('/[^0-9.,%]/', '', $_GET['gv_no']) : '' ), 'SSL'));
 }
-//Begin COWOA
+//COWOA START
 if ($_SESSION['COWOA']) {
   $_SESSION['navigation']->set_snapshot();
   $_SESSION['customer_id']=NULL;
@@ -26,7 +26,7 @@ if ($_SESSION['COWOA']) {
   $messageStack->add_session('login', ERROR_GV_CREATE_ACCOUNT, 'error');
   zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
 }
-//End COWOA
+//COWOA END
 
 // check for a voucher number in the url
 if (isset($_GET['gv_no'])) {

@@ -716,9 +716,9 @@ class order extends base {
                             'ip_address' => $_SESSION['customers_ip_address'] . ' - ' . $_SERVER['REMOTE_ADDR'],
                             'language_code' => $_SESSION['languages_code'],
                             );
-// BEGIN COWOA edit
+// COWOA START
     if ($_SESSION['COWOA']) $sql_data_array['COWOA_order'] = 1;
-// END COWOA edit
+// COWOA END
 
     zen_db_perform(TABLE_ORDERS, $sql_data_array);
     $this->orderId = $this->info['order_id'] = $insert_id = $db->insert_ID();
@@ -1082,6 +1082,7 @@ class order extends base {
     $html_msg['EMAIL_CUSTOMER_PHONE']  = $this->customer['telephone'];
     $html_msg['EMAIL_ORDER_DATE']      = date(ORDER_EMAIL_DATE_FORMAT);
     $html_msg['EMAIL_TEXT_TELEPHONE']  = EMAIL_TEXT_TELEPHONE;
+//COWOA START
 // NO COWOA, so lets set up the Text and HTML E-mail Information for the Order History Info
     if (!$_SESSION['COWOA']){
       $invoiceInfo=EMAIL_TEXT_INVOICE_URL . ' ' . zen_href_link(FILENAME_ACCOUNT_HISTORY_INFO, 'order_id=' . $zf_insert_id, 'SSL', false) . "\n\n";
@@ -1122,6 +1123,7 @@ class order extends base {
       $html_msg['INTRO_URL_TEXT']        = '';
       $html_msg['INTRO_URL_VALUE']       = '';
     }
+//COWOA END
 
     //comments area
     $html_msg['ORDER_COMMENTS'] = '';
@@ -1167,7 +1169,7 @@ class order extends base {
       zen_address_label($_SESSION['customer_id'], $_SESSION['sendto'], false, '', "\n") . "\n";
     }
     $email_order .= EMAIL_TEXT_TELEPHONE . $this->customer['telephone'] . "\n\n";
-    // BEGIN COWOA edit
+// COWOA START
     //addresses area Billing: For COWOA - Billing info sent if the Cart has a dollar value otherwise, do not show the billing address
     if ($_SESSION['cart']->show_total() != 0) {
     $email_order .= "\n" . EMAIL_TEXT_BILLING_ADDRESS . "\n" .
@@ -1179,7 +1181,7 @@ class order extends base {
     $html_msg['ADDRESS_BILLING_TITLE']   = '';
     $html_msg['ADDRESS_BILLING_DETAIL']  = ' <br />';
     }
-     // END COWOA edit
+// COWOA END
     if (is_object($GLOBALS[$_SESSION['payment']])) {
       $cc_num_display = (isset($this->info['cc_number']) && $this->info['cc_number'] != '') ? /*substr($this->info['cc_number'], 0, 4) . */ str_repeat('X', (strlen($this->info['cc_number']) - 8)) . substr($this->info['cc_number'], -4) . "\n\n" : '';
       $email_order .= EMAIL_TEXT_PAYMENT_METHOD . "\n" .
