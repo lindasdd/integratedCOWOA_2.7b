@@ -1,0 +1,10 @@
+/*bof advanced search*/
+.floatingBoxLt{width:60%;}
+.floatingBoxRt{width:36%;}
+
+/*COWOA*/
+.ordersPageHeading {font-size: 18px;}
+#searchOrdersProducts, #searchStatus, #searchOrderID {margin-top:-15px;}
+#searchOrders form, #searchOrdersProducts form, #searchStatus form, #searchOrderID form {font-size: small;}
+
+
