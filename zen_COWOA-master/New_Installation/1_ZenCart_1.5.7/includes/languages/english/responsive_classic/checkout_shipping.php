@@ -20,8 +20,6 @@ define('HEADING_TITLE', 'Step 1 of 4 - Shipping Information');
 define('TABLE_HEADING_SHIPPING_ADDRESS', 'Shipping Address');
 define('TEXT_CHOOSE_SHIPPING_DESTINATION', '<ul class="fa-ul">Tips: <li><i class="fa fa-info-circle"></i> Double check your shipping address.</li><li><i class="fa fa-info-circle"></i> Commercial address? Include the business name.</li><li><i class="fa fa-info-circle"></i> No shipping quotes? - Check your zip code.</li><li><i class="fa fa-info-circle"></i> USPS Flat Rate is the same speed as USPS Priority. </li><li><i class="fa fa-info-circle"></i> Free shipping is the same speed as Fedex Ground.</li><li><i class="fa fa-info-circle"></i> Orders that will not arrive by Saturday are held till Monday.</li><li><i class="fa fa-info-circle"></i> For more details, visit the <a href="index.php?main_page=contact_us">Shipping Info</a> page.</li></ul>');
 define('TITLE_SHIPPING_ADDRESS', 'Shipping Address:');
-define('TEXT_SHIPPING_UPGRADE', '<div id="shippingpageupgradenote" ><i class="fa fa-info-circle"></i> The code for free ground shipping on orders over $100 is over100. Want to upgrade shipping and still get some of the free shipping benefit? On this page, choose the UPGRADED shipping method you prefer. On the next page, use the code over100WC for $18 off your shipping.</div>');
-define('TEXT_HSF_PROP65','<div id="shippingpageProp65note" >WARNING: Your order contains chocolate. Consuming chocolate can expose you to chemicals including lead, which are known to the State of California to cause cancer and birth defects or other reproductive harm. For more informaiton go to www.P65Warnings.ca.gov/food.</div>');
 
 define('TABLE_HEADING_SHIPPING_METHOD', 'Shipping Method:');
 define('TEXT_CHOOSE_SHIPPING_METHOD', '');
@@ -30,9 +28,7 @@ define('TEXT_ENTER_SHIPPING_INFORMATION', 'This is currently the only shipping m
 define('TITLE_NO_SHIPPING_AVAILABLE', 'Not Available At This Time');
 define('TEXT_NO_SHIPPING_AVAILABLE','<span class="alert">Sorry, we are not shipping to your region at this time.</span><br />Please contact us for alternate arrangements.');
 
-define ('TEXT_TRANSITTIME_ESTIMATE','<ul class="fa-ul"><li><i class="fa fa-info-circle"></i> Transit times are estimates, not guarantees and are based on ship date not order date. This includes upgraded shipping methods (Express orders placed at end of week often can not ship till Monday.)</li><li><i class="fa fa-info-circle"></i> For processing time till order ships, see note at top of each page of website.</li></ul>');
 define('TABLE_HEADING_COMMENTS', 'Special Instructions or Comments About Your Order');
-define('TABLE_HEADING_COMMENTS_EXPANDED', 'For carrier instructions, shipping date delays, unavailable USPS shipping due to rural locations, or if the shipping address is unavailable on Friday or Saturdays - please include Comments below.');
 if($COWOA)
 define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', 'Continue to Step 3');
 else
